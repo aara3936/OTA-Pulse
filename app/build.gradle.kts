@@ -17,7 +17,7 @@ if (keystorePropertiesFile.exists()) {
 }
 
 android {
-    namespace = "com.abhinav.otapulse"
+    namespace = "com.colourpulse.app"
     compileSdk = 37
 
     signingConfigs {
@@ -34,12 +34,12 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.abhinav.otapulse"
+        applicationId = "com.colourpulse.app"
         minSdk = 29
         targetSdk = 37
-        versionCode = 34
-        versionName = "5.0.4"
-        
+        versionCode = 35
+        versionName = "5.0.0-beta1"
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -114,11 +114,9 @@ dependencies {
     implementation(libs.androidx.activity.ktx)
     implementation(libs.gson)
 
-    // Lifecycle
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.lifecycle.livedata.ktx)
 
-    // Compose
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.ui)
     implementation(libs.androidx.material3)
@@ -135,38 +133,29 @@ dependencies {
     implementation(libs.androidx.hilt.navigation.compose)
     debugImplementation(libs.androidx.ui.tooling)
 
-    // Hilt
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
     ksp(libs.androidx.hilt.compiler)
 
-    // WorkManager
     implementation(libs.androidx.work.runtime.ktx)
     implementation(libs.androidx.dynamicanimation.ktx)
     implementation(libs.hilt.work)
 
-    // Coroutines
     implementation(libs.kotlinx.coroutines.android)
-
-    // JSON
     implementation(libs.json)
-
     implementation(libs.okhttp)
     implementation(libs.markwon)
 
-    // Room
     implementation(libs.room.runtime)
     implementation(libs.room.ktx)
     ksp(libs.room.compiler)
 
-    // ARB extraction - XZ/LZMA decompression
     implementation(libs.commons.compress)
     implementation(libs.brotli)
     implementation(libs.xz)
     implementation(libs.protobuf.javalite)
     implementation(libs.protobuf.kotlin.lite)
 
-    // Tests
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
